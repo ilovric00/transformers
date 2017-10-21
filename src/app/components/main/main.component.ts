@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-main',
@@ -14,6 +17,9 @@ export class MainComponent implements OnInit {
   displayedColumns = ['position', 'name', 'weight', 'symbol', 'action'];
   dataSource = new ExampleDataSource();
 
+  animal: string;
+  name: string;
+
   transformers:ITransformer[];
 
   statuses = [
@@ -22,7 +28,7 @@ export class MainComponent implements OnInit {
     {value: 'mia-2', viewValue: 'MIA'}
   ];
 
-  constructor(private dataService:DataService) {
+  constructor(private dataService:DataService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -30,6 +36,20 @@ export class MainComponent implements OnInit {
       this.transformers = transformers;
     });
   }
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: { name: this.name, animal: this.animal }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      this.animal = result;
+    });
+  }
+
 }
 
 export interface Element {
