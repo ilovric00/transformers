@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
+
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -8,9 +10,26 @@ import 'rxjs/add/observable/of';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
   displayedColumns = ['position', 'name', 'weight', 'symbol', 'action'];
   dataSource = new ExampleDataSource();
+
+  transformers:ITransformer[];
+
+  statuses = [
+    {value: 'ok-0', viewValue: 'OK'},
+    {value: 'injured-1', viewValue: 'INJURED'},
+    {value: 'mia-2', viewValue: 'MIA'}
+  ];
+
+  constructor(private dataService:DataService) {
+  }
+
+  ngOnInit() {
+    this.dataService.getTransformers().subscribe((transformers) => {
+      this.transformers = transformers;
+    });
+  }
 }
 
 export interface Element {
@@ -18,6 +37,13 @@ export interface Element {
   position: number;
   weight: number;
   symbol: string;
+}
+
+interface ITransformer {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
 }
 
 const data: Element[] = [
