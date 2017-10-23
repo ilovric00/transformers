@@ -1,0 +1,16 @@
+.logo {
+  flex: 1;
+}
+
+.search-box {
+  margin-right: 30px;
+  color: rgba(255,255,255,.87);
+
+  /deep/ .mat-input-placeholder {
+    color: rgba(255,255,255,.87);
+  }
+  
+  /deep/ .mat-form-field-underline {
+    background-color: rgba(255,255,255,.87);
+  }
+}
