@@ -27,3 +27,22 @@
     font-weight: 800;
   }
 }
+
+.mat-icon-button {
+  .delete-btn {
+    color: #283593;
+
+    &:hover {
+      cursor: pointer;
+      color: rgba(63, 83, 181, 0.5);;
+    }   
+  }
+  .update-btn {
+    color: #3F51B5;
+
+    &:hover {
+      cursor: pointer;
+      color: rgba(63, 83, 181, 0.5);
+    }
+  }
+}
