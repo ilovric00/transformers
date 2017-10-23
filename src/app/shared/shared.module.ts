@@ -6,7 +6,8 @@ import {
   MatSelectModule, 
   MatDialogModule, 
   MatFormFieldModule, 
-  MatInputModule 
+  MatInputModule,
+  MatChipsModule 
 } from '@angular/material';
 
 @NgModule({
@@ -17,7 +18,8 @@ import {
     MatSelectModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatChipsModule
   ],
   exports: [
     MatToolbarModule,
@@ -26,7 +28,8 @@ import {
     MatSelectModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatChipsModule
   ]
 })
 export class SharedModule { }

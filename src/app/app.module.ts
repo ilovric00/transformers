@@ -6,7 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { CreateDialogComponent, ReadDialogComponent, UpdateDialogComponent, DeleteDialogComponent } from './components/dialog/dialog.component';
 
 import { DataService } from './services/data.service';
 
@@ -15,7 +15,10 @@ import { DataService } from './services/data.service';
     AppComponent,
     HeaderComponent,
     MainComponent,
-    DialogComponent
+    CreateDialogComponent,
+    ReadDialogComponent,
+    UpdateDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     CoreModule,
@@ -23,10 +26,11 @@ import { DataService } from './services/data.service';
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
-
-  // check it
   entryComponents: [
-    DialogComponent
+    CreateDialogComponent, 
+    ReadDialogComponent,
+    UpdateDialogComponent,
+    DeleteDialogComponent
   ]
 })
 export class AppModule { }

@@ -9,7 +9,12 @@ export class DataService {
   }
 
   getTransformers() {
-    return this.http.get('https://jsonplaceholder.typicode.com/posts')
+    return this.http.get('http://localhost:3000/transformers')
+      .map(res => res.json());
+  }
+
+  getTransformer(id) {
+    return this.http.get('http://localhost:3000/transformers/' + id)
       .map(res => res.json());
   }
 
