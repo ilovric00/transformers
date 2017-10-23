@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Add new transformer</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <p>Name:</p>
+    <input matInput tabindex="1" [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <p>Vehicle Group:</p>
+    <input matInput tabindex="1" [(ngModel)]="data.vehicleGroup">
+  </mat-form-field>
+  <mat-form-field>
+    <p>Vehicle Type:</p>
+    <input matInput tabindex="1" [(ngModel)]="data.vehicleType">
+  </mat-form-field>
+  <mat-form-field>
+    <p>Vehicle Model:</p>
+    <input matInput tabindex="1" [(ngModel)]="data.vehicleModel">
+  </mat-form-field>
+  <mat-form-field>
+    <p>Gears:</p>
+    <input matInput tabindex="1" [(ngModel)]="data.gear">
+  </mat-form-field>
+  <mat-form-field>
+    <p>Status:</p>
+    <input matInput tabindex="1" [(ngModel)]="data.status">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" tabindex="2">Add</button>
+  <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+</div>

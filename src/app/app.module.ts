@@ -1,6 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
@@ -8,6 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
+import { CreateDialogComponent, ReadDialogComponent, UpdateDialogComponent, DeleteDialogComponent } from './components/dialog/dialog.component';
 
 import { DataService } from './services/data.service';
 
@@ -15,15 +14,23 @@ import { DataService } from './services/data.service';
   declarations: [
     AppComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    CreateDialogComponent,
+    ReadDialogComponent,
+    UpdateDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
-    BrowserModule,
-    HttpModule,
     CoreModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CreateDialogComponent, 
+    ReadDialogComponent,
+    UpdateDialogComponent,
+    DeleteDialogComponent
+  ]
 })
 export class AppModule { }

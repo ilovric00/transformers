@@ -1,48 +1,38 @@
 <div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-    </ng-container>
-
-    <!-- Color Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-    </ng-container>
-
-    <!-- CRUD Column -->
-    <ng-container matColumnDef="action">
-      <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <mat-form-field>
-          <mat-select placeholder="Status">
-            <mat-option *ngFor="let status of statuses" [value]="status.value">
-              {{ status.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+  <table class="custom-table">
+    <tr class="custom-table__header">
+      <th>Name</th>
+      <th>Vehicle Group</th>
+      <th>Vehicle Type</th>
+      <th>Vehicle Model</th>
+      <th>Gear</th>
+      <th>Status</th>
+      <th>&nbsp;</th>
+    </tr>
+    <tr (click)="openReadDialog(t)" class="custom-table__row" *ngFor="let t of transformers">
+      <td>{{t.name}}</td>
+      <td>{{t.vehicleGroup}}</td>
+      <td>{{t.vehicleType}}</td>
+      <td>{{t.vehicleModel}}</td>
+      <td>
+        <mat-chip-list>
+          <mat-chip *ngFor="let g of t.gear">{{g}}</mat-chip>
+        </mat-chip-list>
+      </td>
+      <td class="custom-table__status">{{t.status}}</td>
+      <td>
+        <button mat-icon-button (click)="openDeleteDialog(t); $event.stopPropagation()">
+          <i class="material-icons">delete</i>
+        </button>
+        <button mat-icon-button (click)="openUpdateDialog(t); $event.stopPropagation()">
+          <i class="material-icons">create</i>
+        </button>
+      </td>
+    </tr>
+</table>
 </div>
+
+<button mat-raised-button color="primary" (click)="openCreateDialog()">
+  <i class="material-icons">add</i>
+  Add transformer
+</button>
