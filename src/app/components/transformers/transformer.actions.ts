@@ -6,6 +6,7 @@ import {
   REQUEST_TRANSFORMERS_SUCCESS, 
   POST_TRANSFORMER_SUCCESS, 
   DELETE_TRANSFORMER_SUCCESS,
+  UPDATE_TRANSFORMER_SUCCESS
 } from '../../redux/actions';
 import { DataService } from '../../services/data.service';
 
@@ -43,6 +44,16 @@ export class TransformerActions {
       this.ngRedux.dispatch({
         type: DELETE_TRANSFORMER_SUCCESS,
         id,
+      });
+    });
+  }
+
+  updateTransformer(t) {
+    this.dataService.updateTransformer(t)
+    .subscribe(transformer => {
+      this.ngRedux.dispatch({
+        type: UPDATE_TRANSFORMER_SUCCESS,
+        transformer,
       });
     });
   }

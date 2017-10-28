@@ -38,4 +38,9 @@ export class DataService {
       .map(res => res.json());    
   }
 
+  updateTransformer(transformer) {
+    return this.http.put('http://localhost:3000/transformers/' + transformer.id, transformer)
+      .map(res => res.json());    
+  }
+
 }

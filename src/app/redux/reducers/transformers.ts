@@ -3,6 +3,7 @@ import {
   REQUEST_TRANSFORMERS_SUCCESS,
   POST_TRANSFORMER_SUCCESS,
   DELETE_TRANSFORMER_SUCCESS,
+  UPDATE_TRANSFORMER_SUCCESS,
   FILTER_TRANSFORMERS 
 } from '../actions';
 
@@ -49,6 +50,17 @@ function deleteTransformer(state, action) : IAppState {
   };
 }
 
+function updateTransformer(state, action) {
+  return {
+    ...state,
+    transformers: state.transformers.map(transformer => 
+      transformer.id === action.transformer.id ?
+        { ...action.transformer } : 
+        transformer
+    ) 
+  };
+}
+
 function filterTransformers(state, action) : IAppState {
   return Object.assign({}, state, {
     filteredTransformers: state.transformers.filter(t => 
@@ -66,6 +78,9 @@ export default function reducer(state = initialState, action) {
     
     case DELETE_TRANSFORMER_SUCCESS:
       return deleteTransformer(state, action);
+    
+    case UPDATE_TRANSFORMER_SUCCESS:
+      return updateTransformer(state, action);
     
     case FILTER_TRANSFORMERS:
       return filterTransformers(state, action);

@@ -37,7 +37,7 @@ export class TransformerComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // TODO: update on server side
+      this.transformerActions.updateTransformer(result);
     });
   }
 
