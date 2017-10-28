@@ -39,6 +39,27 @@ export class UpdateDialogComponent {
     { value: 'INJURED' }
   ];
 
+  vehicleGroup = [
+    { value: 'Air' },
+    { value: 'Sea' },
+    { value: 'Land' },
+  ];
+
+  vehicleType = {
+    Air: [{ value: 'Plane' }, { value: 'Helicopter' }],
+    Sea: [{ value: 'Boat' }, { value: 'Submarine' }],
+    Land: [{ value: 'Car' }, { value: 'Truck' }]    
+  }
+
+  vehicleModel = {
+    Plane: [{ value: 'F-22' }, { value: 'Sukhoi' }, { value: 'MiG' }],
+    Helicopter: [{ value: 'Apache' }, { value: 'Kamov' }],
+    Boat: [{ value: 'Sailboat' }, { value: 'Jetboat' }],
+    Submarine: [{ value: 'Standard' }],
+    Car: [{ value: 'Camaro' }, { value: 'AMG GT R' }, { value: 'Lamborghini' }],
+    Truck: [{ value: 'Unimog' }, { value: 'Western Star 5700' }]        
+  }
+
   constructor(
     public dialogRef: MatDialogRef<UpdateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }

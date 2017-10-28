@@ -6,15 +6,27 @@
   </mat-form-field>
   <mat-form-field>
     <p>Vehicle Group:</p>
-    <input matInput tabindex="1" [(ngModel)]="data.vehicleGroup">
+    <mat-select [(ngModel)]="data.vehicleGroup">
+      <mat-option *ngFor="let vg of vehicleGroup" [value]="vg.value">
+        {{vg.value}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <mat-form-field>
     <p>Vehicle Type:</p>
-    <input matInput tabindex="1" [(ngModel)]="data.vehicleType">
+    <mat-select [(ngModel)]="data.vehicleType">
+      <mat-option *ngFor="let vg of vehicleType[data.vehicleGroup]" [value]="vg.value">
+        {{vg.value}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <mat-form-field>
     <p>Vehicle Model:</p>
-    <input matInput tabindex="1" [(ngModel)]="data.vehicleModel">
+    <mat-select [(ngModel)]="data.vehicleModel">
+      <mat-option *ngFor="let vg of vehicleModel[data.vehicleType]" [value]="vg.value">
+        {{vg.value}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <mat-form-field>
     <p>Gears:</p>
