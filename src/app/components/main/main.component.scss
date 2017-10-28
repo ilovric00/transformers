@@ -1,48 +1,9 @@
-.example-container {
+.fluid-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  max-height: 500px;
-  min-width: 300px;
-}
-
-.custom-table {
-  font-family: Roboto,"Helvetica Neue",sans-serif;
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-
-  &__header {
-    height: 50px;
-    background-color: #283593;
-    color: #fff;
-  }
-
-  &__row {
-    height: 50px;
-    border-bottom: 1px solid #ccc;
-    cursor: pointer;
-  }
-
-  &__status {
-    font-weight: 800;
-  }
-}
-
-.mat-icon-button {
-  .delete-btn {
-    color: #283593;
-
-    &:hover {
-      cursor: pointer;
-      color: rgba(63, 83, 181, 0.5);;
-    }   
-  }
-  .update-btn {
-    color: #3F51B5;
-
-    &:hover {
-      cursor: pointer;
-      color: rgba(63, 83, 181, 0.5);
-    }
-  }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }

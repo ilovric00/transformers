@@ -1,0 +1,29 @@
+.tbl {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  
+  &__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: center;
+  
+    &__item {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -ms-flex-item-align: center;
+          align-self: center;
+    }
+  
+    &--header {
+      @extend .tbl__row;
+      height: 50px;
+      background-color: #283593;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+}

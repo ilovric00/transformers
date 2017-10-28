@@ -10,6 +10,13 @@ import { CreateDialogComponent, ReadDialogComponent, UpdateDialogComponent, Dele
 
 import { DataService } from './services/data.service';
 
+import { TransformerListComponent } from './components/transformers/transformer-list.component';
+import { TransformerComponent } from './components/transformers/transformer.component';
+import { TransformerActions } from './components/transformers/transformer.actions';
+
+import { NgReduxModule, NgRedux } from 'ng2-redux';
+import { store, IAppState } from './redux';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +25,16 @@ import { DataService } from './services/data.service';
     CreateDialogComponent,
     ReadDialogComponent,
     UpdateDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    TransformerListComponent,
+    TransformerComponent
   ],
   imports: [
     CoreModule,
     SharedModule,
+    NgReduxModule
   ],
-  providers: [DataService],
+  providers: [DataService, TransformerActions],
   bootstrap: [AppComponent],
   entryComponents: [
     CreateDialogComponent, 
@@ -33,4 +43,8 @@ import { DataService } from './services/data.service';
     DeleteDialogComponent
   ]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(ngRedux:NgRedux<IAppState>) {
+    ngRedux.provideStore(store);
+  }
+}

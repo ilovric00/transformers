@@ -1,0 +1,20 @@
+<div class="tbl__row" (click)="openReadDialog(transformer)">
+  <span class="tbl__row__item">{{transformer.name}}</span>
+  <span class="tbl__row__item">{{transformer.vehicleGroup}}</span>
+  <span class="tbl__row__item">{{transformer.vehicleType}}</span>
+  <span class="tbl__row__item">{{transformer.vehicleModel}}</span>
+  <span class="tbl__row__item--gear">
+    <mat-chip-list>
+      <mat-chip *ngFor="let g of transformer.gear">{{g}}</mat-chip>
+    </mat-chip-list>
+  </span>
+  <span class="tbl__row__item--status">{{transformer.status}}</span>
+  <span class="tbl__row__item--actions">
+    <button mat-icon-button (click)="openDeleteDialog(transformer); $event.stopPropagation()">
+      <i class="material-icons delete-btn">delete</i>
+    </button>
+    <button mat-icon-button (click)="openUpdateDialog(transformer); $event.stopPropagation()">
+      <i class="material-icons update-btn">create</i>
+    </button>
+  </span>
+</div>

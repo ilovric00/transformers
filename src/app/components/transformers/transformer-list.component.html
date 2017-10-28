@@ -1,0 +1,12 @@
+<section class="tbl">
+  <div class="tbl__row--header">
+    <div class="tbl__row__item">Name</div>
+    <div class="tbl__row__item">Vehicle Group</div>
+    <div class="tbl__row__item">Vehicle Type</div>
+    <div class="tbl__row__item">Vehicle Model</div>
+    <div class="tbl__row__item">Gear</div>
+    <div class="tbl__row__item">Status</div>
+    <div class="tbl__row__item">&nbsp;</div>
+  </div>
+  <app-transformer [transformer]='t' *ngFor="let t of filteredTransformers$ | async"></app-transformer>
+</section>
