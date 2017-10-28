@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   templateUrl: './CRUD/create.dialog.component.html',
+  styleUrls: ['./dialog.component.scss']
 })
 export class CreateDialogComponent {
   constructor(
@@ -29,8 +30,15 @@ export class ReadDialogComponent {
 
 @Component({
   templateUrl: './CRUD/update.dialog.component.html',
+  styleUrls: ['./dialog.component.scss']  
 })
 export class UpdateDialogComponent {
+  status = [
+    { value: 'OK' },
+    { value: 'MIA' },
+    { value: 'INJURED' }
+  ];
+
   constructor(
     public dialogRef: MatDialogRef<UpdateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }

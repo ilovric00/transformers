@@ -10,11 +10,11 @@
   </span>
   <span class="tbl__row__item--status">{{transformer.status}}</span>
   <span class="tbl__row__item--actions">
-    <button mat-icon-button (click)="openDeleteDialog(transformer); $event.stopPropagation()">
-      <i class="material-icons delete-btn">delete</i>
-    </button>
     <button mat-icon-button (click)="openUpdateDialog(transformer); $event.stopPropagation()">
       <i class="material-icons update-btn">create</i>
+    </button>
+    <button mat-icon-button (click)="openDeleteDialog(transformer); $event.stopPropagation()">
+      <i class="material-icons delete-btn">delete</i>
     </button>
   </span>
 </div>

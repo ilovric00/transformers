@@ -37,7 +37,9 @@ export class TransformerComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.transformerActions.updateTransformer(result);
+      if(result) {
+        this.transformerActions.updateTransformer(result);
+      }
     });
   }
 
@@ -48,7 +50,7 @@ export class TransformerComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result){
+      if(result) {
         this.transformerActions.deleteTransformer(transformer.id);
       }
     });

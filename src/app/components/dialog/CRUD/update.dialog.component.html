@@ -22,7 +22,11 @@
   </mat-form-field>
   <mat-form-field>
     <p>Status:</p>
-    <input matInput tabindex="1" [(ngModel)]="data.status">
+    <mat-select [(ngModel)]="data.status">
+      <mat-option *ngFor="let s of status" [value]="s.value">
+        {{s.value}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
