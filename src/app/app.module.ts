@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { CreateDialogComponent, ReadDialogComponent, UpdateDialogComponent, DeleteDialogComponent } from './components/dialog/dialog.component';
+import { ChipsComponent } from './components/chips/chips.component';
 
 import { TransformerListComponent } from './components/transformers/transformer-list.component';
 import { TransformerComponent } from './components/transformers/transformer.component';
@@ -29,7 +30,8 @@ import { store, IAppState } from './redux';
     DeleteDialogComponent,
     TransformerListComponent,
     TransformerComponent,
-    SortPipe
+    SortPipe,
+    ChipsComponent
   ],
   imports: [
     CoreModule,

@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material';
 import { CreateDialogComponent } from '../dialog/dialog.component';
 import { TransformerActions } from '../transformers/transformer.actions';
 
+import { ITransformer } from '../transformers/ITransformer';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -16,9 +18,11 @@ export class MainComponent {
   ) { }
 
   openCreateDialog(): void {
+    const transformer = <ITransformer>{};
+    transformer.gear = [];
     let dialogRef = this.dialog.open(CreateDialogComponent, {
       width: '250px',
-      data: {}
+      data: transformer
     });
 
     dialogRef.afterClosed().subscribe(result => {

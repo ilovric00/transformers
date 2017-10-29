@@ -28,10 +28,7 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field>
-    <p>Gears:</p>
-    <input matInput tabindex="1" [(ngModel)]="data.gear">
-  </mat-form-field>
+  <app-chips [title]='"Gears"' [array]='data.gear'></app-chips>
   <mat-form-field>
     <p>Status:</p>
     <mat-select [(ngModel)]="data.status">

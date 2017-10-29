@@ -16,10 +16,7 @@
     <p>Vehicle Model:</p>
     <input matInput tabindex="1" [(ngModel)]="data.vehicleModel">
   </mat-form-field>
-  <mat-form-field>
-    <p>Gears:</p>
-    <input matInput tabindex="1" [(ngModel)]="data.gear">
-  </mat-form-field>
+  <app-chips [title]='"Gears"' [array]='data.gear'></app-chips>
   <mat-form-field>
     <p>Status:</p>
     <input matInput tabindex="1" [(ngModel)]="data.status">
