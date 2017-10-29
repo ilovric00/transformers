@@ -39,4 +39,4 @@ Navigate to `http://localhost:4200/`.
 
 ## Demo
 
-![Demo](https://bytebucket.org/IvanLovric/transformers/raw/bfce927e4077858505d1cdc4142fd2d742e56066/ScreenShot.png)
+![Demo](https://bytebucket.org/IvanLovric/transformers/raw/fd48c6ad1180df6a5978c723c47f5256284f0203/ScreenShot.png)
