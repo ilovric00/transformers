@@ -33,6 +33,7 @@ git clone https://IvanLovric@bitbucket.org/IvanLovric/transformers.git
 
 ```
 cd transformers
+npm install
 npm start
 ```
 Navigate to `http://localhost:4200/`.
