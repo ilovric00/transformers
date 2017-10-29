@@ -4,6 +4,38 @@ DIGIHEY exam task. [Angular](https://github.com/angular/angular-cli), [Angular M
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.8.
 
+## How to Use ##
+First, make sure you have **Node.js** (npm) installed.
+
+** 1. Clone API server**
+
+```
+git https://github.com/DyslexicDcuk/transformers-api.git
+```
+
+
+** Setup API server and run it**
+
+```
+cd transformers-api
+npm install
+npm start
+```
+
+** 2. Clone the app**
+
+```
+git https://IvanLovric@bitbucket.org/IvanLovric/transformers.git
+```
+
+
+** Run it**
+
+```
+cd transformers
+npm start
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
