@@ -1,0 +1,65 @@
+.tbl {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  
+  &__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: center;
+    min-height: 50px;
+    cursor: pointer;    
+  
+    &__item {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -ms-flex-item-align: center;
+          align-self: center;
+
+      @media (max-width: 480px)  {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+      }
+
+      &--gear {
+        @extend .tbl__row__item;        
+        display: -webkit-box;        
+        display: -ms-flexbox;        
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+      }
+
+      &--status {
+        @extend .tbl__row__item;        
+        font-weight: 800;
+      }
+
+      &--actions {
+        @extend .tbl__row__item;        
+        display: -webkit-box;        
+        display: -ms-flexbox;        
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+
+        .delete-btn,
+        .update-btn {
+          color: #3F51B5;
+          
+          &:hover {
+            cursor: pointer;
+            color: rgba(63, 83, 181, 0.5);;
+          }  
+        } 
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<section class="tbl">
+  <div class="tbl__row--header">
+    <div class="tbl__row__item" [class.selected]="header.selected" (click)="sortByField(header.sort)" *ngFor="let header of headers">{{header.value}}</div>
+  </div>
+  <app-transformer [transformer]='t' *ngFor="let t of filteredTransformers$ | async | sort:field"></app-transformer>
+</section>
