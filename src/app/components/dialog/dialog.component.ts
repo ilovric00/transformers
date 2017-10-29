@@ -135,6 +135,7 @@ export class UpdateDialogComponent implements OnInit {
 // ===== DELETE ==================================================
 @Component({
   templateUrl: './CRUD/delete.dialog.component.html',
+  styleUrls: ['./dialog.component.scss']  
 })
 export class DeleteDialogComponent {
   constructor(
