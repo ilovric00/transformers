@@ -10,7 +10,7 @@ First, make sure you have **Node.js** (npm) installed.
 ** 1. Clone API server**
 
 ```
-git https://github.com/DyslexicDcuk/transformers-api.git
+git clone https://github.com/DyslexicDcuk/transformers-api.git
 ```
 
 
@@ -25,7 +25,7 @@ npm start
 ** 2. Clone the app**
 
 ```
-git https://IvanLovric@bitbucket.org/IvanLovric/transformers.git
+git clone https://IvanLovric@bitbucket.org/IvanLovric/transformers.git
 ```
 
 
