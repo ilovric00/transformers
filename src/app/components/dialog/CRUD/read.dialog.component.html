@@ -1,10 +1,25 @@
 <h1 mat-dialog-title>{{data.name}}</h1>
 <div mat-dialog-content>
-  <p>{{data.vehicleGroup}}</p>
-  <p>{{data.vehicleType}}</p>
-  <p>{{data.vehicleModel}}</p>
-  <p>{{data.gear}}</p>
-  <p>{{data.status}}</p>
+  <p class="black">
+    <i class="material-icons middle">group_work</i>
+    {{data.vehicleGroup}}
+  </p>
+  <p class="black">
+    <i class="material-icons middle">layers</i>
+    {{data.vehicleType}}
+  </p>
+  <p class="black">
+    <i class="material-icons middle">directions_transit</i>
+    {{data.vehicleModel}}
+  </p>
+  <mat-chip-list>
+    <p class="black"><i class="material-icons middle">star_border</i></p>
+      <mat-chip *ngFor="let g of data.gear">{{g}}</mat-chip>
+  </mat-chip-list>
+  <p class="black">
+    <i class="material-icons middle">info_outline</i>
+    {{data.status}}
+  </p>
 </div>
 <div mat-dialog-actions>
   <button mat-raised-button color="primary" (click)="onNoClick()" tabindex="-1">Close</button>

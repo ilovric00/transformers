@@ -83,6 +83,7 @@ export class CreateDialogComponent implements OnInit {
 // ===== READ ==================================================
 @Component({
   templateUrl: './CRUD/read.dialog.component.html',
+  styleUrls: ['./dialog.component.scss']  
 })
 export class ReadDialogComponent {
   constructor(
