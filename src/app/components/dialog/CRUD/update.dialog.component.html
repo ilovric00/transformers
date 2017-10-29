@@ -7,24 +7,24 @@
   <mat-form-field>
     <p>Vehicle Group:</p>
     <mat-select [(ngModel)]="data.vehicleGroup">
-      <mat-option *ngFor="let vg of vehicleGroup" [value]="vg.value">
-        {{vg.value}}
+      <mat-option *ngFor="let vg of vehicleGroup" [value]="vg">
+        {{vg}}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
     <p>Vehicle Type:</p>
     <mat-select [(ngModel)]="data.vehicleType">
-      <mat-option *ngFor="let vg of vehicleType[data.vehicleGroup]" [value]="vg.value">
-        {{vg.value}}
+      <mat-option *ngFor="let vt of vehicleType[data.vehicleGroup]" [value]="vt">
+        {{vt}}
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
     <p>Vehicle Model:</p>
     <mat-select [(ngModel)]="data.vehicleModel">
-      <mat-option *ngFor="let vg of vehicleModel[data.vehicleType]" [value]="vg.value">
-        {{vg.value}}
+      <mat-option *ngFor="let vm of vehicleModel[data.vehicleType]" [value]="vm">
+        {{vm}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -32,8 +32,8 @@
   <mat-form-field>
     <p>Status:</p>
     <mat-select [(ngModel)]="data.status">
-      <mat-option *ngFor="let s of status" [value]="s.value">
-        {{s.value}}
+      <mat-option *ngFor="let s of status" [value]="s">
+        {{s}}
       </mat-option>
     </mat-select>
   </mat-form-field>
